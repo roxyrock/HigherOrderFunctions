@@ -63,12 +63,60 @@ const people = [
   { name: "Giulia", age: 28 },
   { name: "Sara", age: 32 },
 ];
-const namePeople = people.map( person => person.name);
+const namePeople = people.map((person) => person.name);
 console.log(namePeople);
 
 const letters = ["a", "b", "c"];
 console.log(letters.map((element, index) => `${index}: ${element}`));
 
 const values = [1, 2, 3];
-const obj = values.map(value =>({value: value}));
+const obj = values.map((value) => ({ value: value }));
 console.log(obj);
+
+//filter() method
+const nums2 = [5, 12, 8, 20, 3];
+console.log(nums2.filter((num) => num > 10));
+
+const words2 = ["sun", "mountain", "see", "sky"];
+console.log(words2.filter((word) => word.length > 4));
+
+const items = [
+  { name: "A", active: true },
+  { name: "B", active: false },
+  { name: "C", active: true },
+];
+console.log(items.filter((item) => item.active == true));
+
+const numbers2 = [1, 2, 3, 4, 5, 6];
+const filteredArray = numbers2.filter((num) => num % 2 == 0);
+const doubled = filteredArray.map((num) => num * 2);
+console.log(doubled);
+
+const messy = [" hello", "", "world ", " ", "js"];
+const result = messy
+  .filter((word) => word.trim() != "")
+  .map((word) => word.trim());
+console.log(result);
+
+//reduce() method
+
+const nums3 = [4, 2, 8];
+console.log(nums3.reduce((acc, curr) => acc + curr, 0));
+
+const nums4 = [2, 3, 4];
+console.log(nums4.reduce((acc, current) => acc * current, 1));
+
+const words3 = ["hi", "sun", "mountain", "sea", "sky"];
+const count = words3.reduce((acc, word) => acc + (word.length > 3 ? 1 : 0), 0);
+console.log(count);
+
+const letters2 = ["a", "b", "a", "c", "b", "a"];
+const occurrences = letters2.reduce((acc, letter) => {
+  if (!acc[letter]) {
+    acc[letter] = 1;
+  } else {
+    acc[letter]++;
+  }
+  return acc;
+}, {});
+console.log(occurrences);
