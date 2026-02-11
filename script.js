@@ -38,7 +38,7 @@ function filterGreaterThan(arr, limit) {
   let newArray = [];
   for (let i = 0; i < arr.length; i++) {
     function isGreater(value) {
-       return value > limit;
+      return value > limit;
     }
     if (isGreater(arr[i])) {
       newArray.push(arr[i]);
@@ -48,3 +48,27 @@ function filterGreaterThan(arr, limit) {
 }
 
 console.log(filterGreaterThan(numbers, 4));
+
+//map() method
+const nums = [2, 5, 8];
+let newArray = nums.map((n) => n * 2);
+console.log(newArray);
+
+const words = ["sole", "luna", "mare"];
+const wordsLength = words.map((n) => n.length);
+console.log(wordsLength);
+
+const people = [
+  { name: "Marco", age: 20 },
+  { name: "Giulia", age: 28 },
+  { name: "Sara", age: 32 },
+];
+const namePeople = people.map( person => person.name);
+console.log(namePeople);
+
+const letters = ["a", "b", "c"];
+console.log(letters.map((element, index) => `${index}: ${element}`));
+
+const values = [1, 2, 3];
+const obj = values.map(value =>({value: value}));
+console.log(obj);
