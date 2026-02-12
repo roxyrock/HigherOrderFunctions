@@ -137,3 +137,21 @@ let pageNumber = books
   .reduce((acc, current) =>acc+current, 0);
 
 console.log(`Average: ` +pageNumber/booksNumber);
+
+//sort() method
+const users = [
+  { name: "Anna", age: 32 },
+  { name: "Marco", age: 21 },
+  { name: "Luca", age: 45 },
+  { name: "Sara", age: 28 }
+];
+ console.log(users.sort( (userA, userB) => userA.age-userB.age));
+
+ //every() and some() methods
+ const users2 = [
+  { name: "Anna", active: true },
+  { name: "Marco", active: true },
+  { name: "Luca", active: false }
+];
+console.log(users2.every((user => user.active)));
+console.log(users2.some((user => user.active)));
