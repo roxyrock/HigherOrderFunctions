@@ -120,3 +120,20 @@ const occurrences = letters2.reduce((acc, letter) => {
   return acc;
 }, {});
 console.log(occurrences);
+
+
+//method chaining()
+const books = [
+  { title: "Dune", pages: 412 },
+  { title: "It", pages: 1138 },
+  { title: "The Hobbit", pages: 310 },
+  { title: "The Stand", pages: 823 }
+];
+let booksNumber = books
+  .filter(book => book.pages > 400).length;
+let pageNumber = books
+  .filter(book => book.pages > 400)
+  .map((page) =>page.pages)
+  .reduce((acc, current) =>acc+current, 0);
+
+console.log(`Average: ` +pageNumber/booksNumber);
